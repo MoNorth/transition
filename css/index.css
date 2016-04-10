@@ -1,0 +1,417 @@
+/*初始化标签*/
+body,div,header,ul,li,span,button,p,input{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+body{
+	background-color: #ddd;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.content{
+	width: 980px;
+	margin: 0 auto;
+}
+/*清除浮动*/
+.content:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.config{
+	width: 550px;
+}
+.config>li{
+	float: left;
+	width: 265px;
+	height: 305px;
+	background-color: #fff;
+	display: block;
+	margin:0 10px 20px 0;
+	box-shadow: 3px 3px 1px #aaa;
+}
+#canvas{
+	display: block;
+	margin:12px auto;
+	background-color: #eee;
+}
+.selectAllAttr,.configOther,#iso{
+	width: 90%;
+	margin: 12px auto;
+}
+.selectAllAttr>li,.configOther>li{
+	list-style: none;
+	height: 75px;
+	margin-bottom: 5px;
+}
+.selectAllAttr .l1{
+	background-color: #ddd;
+}
+.selectAllAttr .l2{
+	background-color: #eee;
+}
+.selectAllAttr .l3{
+	background-color: #ddd;
+}
+.selectAllAttr li .img{
+	height: 42px;
+	margin-top: 15px;
+	width: 120px;
+	margin-left: 5px;
+}
+.selectAllAttr li .img div{
+	width: 38px;
+	height: 38px;
+	border:2px dashed #666;
+}
+.selectAllAttr li .img .new{
+	border-style: solid;
+}
+.selectAllAttr .l2 .new{
+	width: 60px;
+}
+.selectAllAttr .l3 .new{
+	transform:rotate(45deg);
+	-ms-transform:rotate(45deg); 	
+	-moz-transform:rotate(45deg); 
+	-webkit-transform:rotate(45deg); 
+	-o-transform:rotate(45deg); 
+}
+.selectAllAttr li .selectItem{
+	height: 100%;
+	width: 80px;
+	margin-right: 5px;
+}
+.selectAllAttr li .selectItem li{
+	list-style: none;
+	line-height: 20px;
+	height: 20px;
+	font-size: 14px;
+	color: #999;
+	margin-top: 10px;
+	border: 0px solid #999;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.selectAllAttr li .selectItem li:hover{
+	color: #666;
+}
+.selectAllAttr .l3 .selectItem li{
+	margin-top: 3px;
+}
+.selectAllAttr li .selectItem li span{
+	display: none;
+	float: right;
+	margin-right: 5px;
+}
+/*选择过渡属性模块动画*/
+.selectAllAttr .l1:hover .new{
+	animation: selectRun 0.5s alternate infinite linear;
+	-moz-animation: selectRun 0.5s alternate infinite linear;	
+	-webkit-animation: selectRun 0.5s alternate infinite linear;	
+	-o-animation: selectRun 0.5s alternate infinite linear;
+}
+.selectAllAttr .l2:hover .new{
+	animation: selectWidth 0.5s alternate infinite linear;
+	-moz-animation: selectWidth 0.5s alternate infinite linear;	
+	-webkit-animation: selectWidth 0.5s alternate infinite linear;	
+	-o-animation: selectWidth 0.5s alternate infinite linear;
+}
+.selectAllAttr .l3:hover .new{
+	animation: selectRotate 0.5s alternate infinite linear;
+	-moz-animation: selectRotate 0.5s alternate infinite linear;	
+	-webkit-animation: selectRotate 0.5s alternate infinite linear;	
+	-o-animation: selectRotate 0.5s alternate infinite linear;
+}
+
+
+
+@keyframes selectRun
+{
+	from {margin-right: 0px;}
+	to {margin-right: 20px;}
+}
+@-moz-keyframes selectRun
+{
+	from {margin-right: 0px;}
+	to {margin-right: 20px;}
+}
+@-webkit-keyframes selectRun
+{
+	from {margin-right: 0px;}
+	to {margin-right: 20px;}
+}
+@-o-keyframes selectRun
+{
+	from {margin-right: 0px;}
+	to {margin-right: 20px;}
+}
+@keyframes selectWidth
+{
+	from {width: 60px;}
+	to {width: 40px;}
+}
+@-moz-keyframes selectWidth
+{
+	from {width: 60px;}
+	to {width: 40px;}
+}
+@-webkit-keyframes selectWidth
+{
+	from {width: 60px;}
+	to {width: 40px;}
+}
+@-o-keyframes selectWidth
+{
+	from {width: 60px;}
+	to {width: 40px;}
+}
+@keyframes selectRotate
+{
+
+	from {transform:rotate(45deg);}
+	to {transform:rotate(0deg);}
+}
+@-moz-keyframes selectRotate
+{
+	from {-moz-transform:rotate(45deg);}
+	to {-moz-transform:rotate(0deg);}
+}
+@-webkit-keyframes selectRotate
+{
+	from {-webkit-transform:rotate(45deg);}
+	to {-webkit-transform:rotate(0deg);}
+}
+@-o-keyframes selectRotate
+{
+	from {-o-transform:rotate(45deg);}
+	to {-o-transform:rotate(0deg);}
+}
+.configOther>li p{
+	height: 75px;
+	line-height: 75px;
+	text-indent: 5px;
+	font-size: 14px;
+	color: #00FFFF;
+}
+.configOther>li .bar{
+	margin-right: 5px;
+	position: relative;
+	height: 9px;
+	width: 180px;
+	background-color: #666;
+	top: 33px;
+	background: -webkit-linear-gradient(left,#FF0000, #00FFFF); 
+	background: -o-linear-gradient(left,#FF0000, #00FFFF); 
+	background: -moz-linear-gradient(left,#FF0000, #00FFFF); 
+	background: linear-gradient(to left,#FF0000, #00FFFF);
+}
+.configOther>li .barRun{
+	height: 27px;
+	width: 9px;
+	position: absolute;
+	top:-9px;
+	left:0;
+	cursor: pointer;
+}
+.configOther>li .barRun .top{
+	width: 0px;
+	border:4px solid #333;
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	position: absolute;
+	bottom: 5px;	
+}
+.configOther>li .barRun .bottom{
+	width: 0px;
+	border:4px solid #333;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	position: absolute;
+	top: 5px;	
+}
+
+#speed p,#curve p{
+	color: #999;
+}
+#speed .bar{
+	width: 140px;
+	background: #bbb;
+}
+
+#curve>div{
+	width: 34px;
+	height: 31px;
+	margin-top: 22px;
+	margin-right: 5px;
+	line-height: 24px;
+	border: 1px solid #bbb;
+	padding-left: 4px;
+}
+#curve>div input{
+	width: 20px;
+	outline: none;
+	height: 31px;
+}
+
+
+
+#iso li{
+	margin-top: 10px;
+	height: 40px;
+	background-color: #ddd;
+	list-style: none;
+	cursor: pointer;
+	font-size: 13px;
+	color: #999;
+	border-radius: 2px;
+}
+
+#iso li>.index,#iso li>.del{
+	height: 30px;
+	margin-top: 5px;
+	width: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-right: 1px solid #fff;
+}
+#iso li>.content{
+	width: 150px;
+	height: 100%;
+	margin-left: 10px;
+	text-align: center;
+	line-height: 40px;
+}
+#iso li>.del{
+	border: none;
+	border-left:1px solid #fff;
+	transition:width 0.2s;
+	-webkit-transition:width 0.2s;
+	-o-transition:width 0.2s;
+	-moz-transition:width 0.2s;
+}
+#iso li>.del:hover{
+	color: red;
+	width: 40px;
+}
+#iso li>.index div{
+	width: 16px;
+	height: 16px;
+	border-radius: 3px;
+	margin: 7px;
+}
+#tooMore{
+	margin-left: 80px;
+	opacity: 0;
+	transition:opacity 0.2s;
+	-webkit-transition:opacity 0.2s;
+	-o-transition:opacity 0.2s;
+	-moz-transition:opacity 0.2s;
+}
+
+
+.config li>header{
+	width: 90%;
+	margin: 0 auto;
+	height: 39px;
+	border-bottom: 1px solid #999;
+	line-height: 39px;
+	font-family: 'microsoft yahei';
+	font-size: 14px;
+	color: #999;
+}
+.config li>header button{
+	margin-top: 10px;
+	width: 40px;
+	background-color: #aaa;
+	color: #111;
+	border-radius: 2px;
+	height: 20px;
+	line-height: 20px;
+	outline: none;
+	cursor: pointer;
+}
+.view{
+	width: 400px;
+	height: 630px;	
+}
+.view .run{
+	height: 400px;
+	background-color: #fff;
+	margin-bottom: 20px;
+	border-color: #fff;
+	border-style: groove;
+	position: relative;
+}
+#runItem{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background-color: #00FFFF;
+	top:30px;
+	left: 30px;
+	box-shadow: 1px 1px 1px #aaa;
+	border-radius: 2px;
+	transition-property:width,height,top,left,transform;
+	-moz-transition-property: width,height,top,left,-moz-transform;
+	-webkit-transition-property:width,height,top,left,-webkit-transform;
+	-o-transition-property:width,height,top,left,-o-transform;
+}
+.view .code{
+	height: 185px;
+	background-color: #272822;
+	box-shadow: 2px 2px 1px #666;
+	padding: 10px;
+	overflow:auto; 
+	white-space: nowrap;
+}
+
+#go{
+	background-color: #999;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	font-family: 'microsoft yahei';
+	cursor: pointer;
+
+}
+/*代码高亮*/
+#go:hover{
+	color: #DE5347;
+}
+#code{
+	color: #fff;
+	font-size: 15px;
+}
+.green{
+	color: #55A92E;
+}
+.blue{
+	color: #48BEEF;
+}
+.purple{
+	color: #6F73FF;
+}
+.ash{
+	color: #999;
+}
+.yellow{
+	color: #E6DB74;
+}
+.red{
+	color: #F92659;
+}
+
+

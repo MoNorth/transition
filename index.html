@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>transition视图</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="content">
+		<!-- 绑定开始演示 -->
+		<header id="go">
+			Click Me ! Let's Running!
+		</header>
+		<!-- 四个配置项 -->
+		<ul class="config left">
+			<li>
+				<header>更改速度曲线</header>
+				<canvas id="canvas" width="240" height="240"></canvas>
+			</li>
+			<li>
+				<header>选择过渡属性 <button class="right" id="selectAll">ALL</button></header>
+				<ul class="selectAllAttr">
+					<li class="l1">
+						<div class="left img">
+							<div class="old left"></div>
+							<div class="new right"></div>
+						</div>
+						<ul class="selectItem right">
+							<li saa="xr">X 轴运动<span style="display:block;">√</span></li>
+							<li saa="yr">Y 轴运动<span>√</span></li>
+						</ul>
+					</li>
+					<li class="l2">
+						<div class="left img">
+							<div class="old left"></div>
+							<div class="new right"></div>
+						</div>
+						<ul class="selectItem right">
+							<li saa="w">横向变化<span>√</span></li>
+							<li saa="h">纵向变化<span>√</span></li>
+						</ul>
+					</li>
+					<li class="l3">
+						<div class="left img">
+							<div class="old left"></div>
+							<div class="new right"></div>
+						</div>
+						<ul class="selectItem right">
+							<li saa="xt">X 轴旋转<span>√</span></li>
+							<li saa="yt">Y 轴旋转<span>√</span></li>
+							<li saa="zt">Z 轴旋转<span>√</span></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<header>设置其他属性<button class="right" id="run">Run</button></header>
+				<ul class="configOther">
+					<li id="speed">
+						<p class="left">Speed: <span>0.1</span>s</p>
+						<div long="130" class="bar right">
+							<div class="barRun">
+								<div class="top"></div>
+								<div class="bottom"></div>
+							</div>
+						</div>
+					</li>
+					<li id="curve">
+						<p class="left">Curve:</p>
+						<div class="right">.<input type="text" maxlength="2" value="66" tabindex="4"></div>
+						<div class="right">.<input type="text" maxlength="2" value="66" tabindex="3"></div>
+						<div class="right">.<input type="text" maxlength="2" value="33" tabindex="2"></div>
+						<div class="right">.<input type="text" maxlength="2" value="33" tabindex="1"></div>
+					</li>
+					<li id="color">
+						<p class="left">Color:</p>
+						<div long="170" class="bar right">
+							<div class="barRun">
+								<div class="top"></div>
+								<div class="bottom"></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<header>镜像 <span id="tooMore">too more</span><button class="right" id="addIso">Add</button></header>
+				<ul id="iso">
+					
+				</ul>
+			</li>
+		</ul>
+		<!-- 演示与代码窗口 -->
+		<div class="view right">
+			<div class="run">
+				<div id="runItem"></div>
+			</div>
+			<div class="code">
+				<code id="code">
+
+				</code>
+			</div>
+			
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript" src="js/index.js">
+</script>
+</html>
